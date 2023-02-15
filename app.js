@@ -43,35 +43,34 @@ app.get('/about', (req, res) => {
 })
 
 app.post('/register', async (req, res) => {
-    console.log('hello');
     console.log(req.body);
-    const { password, username } = req.body;
+    const { password, username, email } = req.body;
     if (!password) {
         return res.redirect('/home');
     }
     const hash = await bcrypt.hash(password, 12);
     const user = new User({
         username,
+        email,
         password: hash
     })
     await user.save();
-    console.log(req.body);
-    console.log(password);
-    console.log(username);
     res.redirect('/home');
 })
 
 app.post('/login', async (req, res) => {
     console.log('hello');
     const { username, password } = req.body;
+    console.log(req.body)
     const user = await User.findOne({ username });
+    console.log(user)
     const validPassword = await bcrypt.compare(password, user.password);
     if (validPassword) {
-        res.redirect('/about');
-        alert("Succesfully logged in ");
+        res.redirect('/home');
+        console.log("Succesfully logged in ");
     }
     else {
-        alert("Try Again");
+        res.redirect("/home");
     }
 
 })
