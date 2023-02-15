@@ -1,0 +1,432 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    z-index: 1;
+    top: 0px;
+}
+
+
+
+#logo {
+    margin: 3px 4px;
+    padding: 0px 17px;
+    position: relative;
+    animation: logomove 2s ease-in 1s infinite forwards;
+}
+
+@keyframes logomove {
+
+    0% {
+        top: 0px;
+        left: 0px;
+    }
+
+    100% {
+        top: 0px;
+        left: 20px;
+    }
+
+}
+
+#navbar ul {
+    display: flex;
+}
+
+#navbar::before {
+    content: " ";
+    background-color: #41d999;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    /*  to prevent hoveing elements get over sticky navbar*/
+}
+
+#navbar ul li {
+    list-style: none;
+}
+
+#navbar ul li a {
+
+    color: white;
+    display: flex;
+    padding: 32px 31px 32px 19px;
+    border-radius: 0px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 0px 0px 0px 0px;
+}
+
+#navbar ul li a:hover {
+    color: rgb(17, 8, 56);
+    /* background-color: white;  */
+    /*font-size: 1.3rem;*/
+    background-color: #11d091;
+}
+
+.btn {
+    color: #121212;
+    border-radius: 1px;
+    margin: 0px 0px 0px 462px;
+    border: 2px solid #f4f2f2;
+    background-color: #41d999;
+    cursor: pointer;
+    padding: 3px 8px 4px 8px;
+    box-shadow: 4px 5px 5px 1px;
+
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.profile {
+    height: 59px;
+    width: 6%;
+    position: relative;
+    margin: 0px 0px 0px 522px;
+    display: none;
+}
+
+.profile img {
+    height: 99px;
+    width: 80px;
+    margin: -7px -83px;
+    position: relative;
+    margin: -16px -3px;
+
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* opacity: 0.8; */
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.modal-content {
+    background-color: rgb(214, 217, 222);
+    width: 400px;
+    height: 300px;
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+    border: 5px solid #100645;
+
+
+
+}
+
+.button-box {
+    width: 220px;
+    margin: 30px auto;
+    position: relative;
+    box-shadow: 0 0 20px 10px rgb(161, 157, 149);
+    border-radius: 20px;
+
+
+}
+
+.toggle-btn {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+
+}
+
+.modal-content h1 {
+    font-size: larger;
+    padding: 10px 0px 20px 0px;
+}
+
+.input-group {
+    top: 85px;
+    position: absolute;
+    width: 280px;
+    transition: 0.5s;
+    padding: 0px 56px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px auto;
+    margin: 10px auto;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom: 1px solid rgb(167, 39, 39);
+    outline: none;
+    background: transparent;
+
+}
+
+.check-box {
+    margin: 5px 3px 3px 3px;
+
+}
+
+span {
+    color: blue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 13px;
+    position: absolute;
+    margin: 4px 4px;
+}
+
+.register {
+    width: 35%;
+    padding: 6px 8px;
+    cursor: pointer;
+    display: block;
+    margin: 30px 85px;
+    background: linear-gradient(to right, #f4dbdf, #de0707);
+    border-radius: 30px;
+    border: none;
+
+}
+
+.login1 {
+    width: 35%;
+    padding: 6px 8px;
+    cursor: pointer;
+    display: block;
+    margin: 30px 85px;
+    background: linear-gradient(to right, #f4dbdf, #de0707);
+    border-radius: 30px;
+    border: none;
+
+}
+
+
+
+#btn2 {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #f4dbdf, #de0707);
+    border-radius: 30px;
+    transition: 0.5s;
+}
+
+#login {
+    left: 25px;
+
+}
+
+#Register {
+    left: 400px;
+
+}
+
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 14px;
+    font-size: 35px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+#navbar2 {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 85px;
+    justify-content: center;
+    z-index: 1;
+    display: none;
+
+
+}
+
+#navbar2 ul {
+    display: flex;
+}
+
+#navbar2 ul li {
+    list-style: none;
+    padding: 17px 6px 17px 1px;
+    margin: 0px 60px 0px 54px;
+
+}
+
+#navbar2::before {
+    content: " ";
+    background-color: #0f0545;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+
+}
+
+#navbar2 ul li a {
+    color: white;
+    display: block;
+    padding: 3px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 1.2rem;
+
+}
+
+#navbar2 ul li a:hover {
+    color: rgb(14, 13, 13);
+    background-color: white;
+    opacity: 0.5;
+
+
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+}
+
+#home img {
+
+    width: 100%;
+    padding: 7px 0px 10px 0px;
+}
+
+#home h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 0px 0px 7px 0px;
+}
+
+#home a {
+    text-decoration: none;
+}
+
+#home .order {
+    background: url(/static/tshirt.png);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 280px;
+    margin: 5px auto;
+
+}
+
+.order-set {
+    margin: auto;
+    top: 340px;
+    left: 850px;
+    position: absolute;
+    width: 98px;
+    height: 41px;
+    background: linear-gradient(to right, #f4dbdf, #de0707);
+    border-radius: 30px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.order-set:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+.service-container h1 {
+    text-shadow: 4px 2px 3px rgb(176, 208, 192);
+}
+
+.service {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+
+
+}
+
+.service .box {
+    border: 2px solid white;
+    background-color: rgb(176, 208, 192);
+    padding: 4px 21px 0px 16px;
+    border-radius: 12px;
+    margin: 0px 24px 0px 0px;
+    transition: all 0.0s ease-in-out;
+
+
+
+}
+
+.service :hover {
+    background-color: rgb(176, 208, 192);
+    transform: scale(1.1);
+    overflow: hidden;
+
+}
+
+
+.service .box img {
+    height: 160px;
+    width: 160px;
+    margin: 0px 7px 0px 0px;
+    display: block;
+    padding: 9px 0px 0px 0px;
+
+}
+
+
+
+.center {
+    text-align: center;
+}
+
+.font {
+    font-size: 0.8rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 8px 0px 0px 0px;
+}
+
+/* second page  */
+.product {
+    width: 100%;
+    height: 300%;
+    background: linear-gradient(to right, #ecf6f1, #19a778);
+    /* opacity: 0.8; */
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+#footer {
+    display: flexbox;
+    justify-content: center;
+    background-color: #0f0545;
+    height: 46px;
+    color: white;
+    text-align: center;
+}

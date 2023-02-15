@@ -1,0 +1,120 @@
+doctype html 
+head 
+ title TEESHOP
+ style
+   include ../static/style.css
+body 
+ doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Best T-shirt selling site
+  style.
+    body {
+    background-color: #67a98e;
+    }
+  
+nav#navbar
+  #logo
+   
+      img(src='/static/logoo.png' alt='Logo' width='70px' height='75px')
+  ul
+    li.item
+      a(href='#') Home
+    li.item
+      a(href='about') About us
+    li.item
+      a(href='#') Contact
+    li.item
+      a(href='#') Buy
+    li.item
+      a Designs
+  div
+    button.btn Login/Register
+  div 
+   .profile 
+     img(src='/static/profile.png')
+hr
+.product
+.modal
+  .modal-content
+    .button-box
+      #btn2
+      button.toggle-btn(type='button' onclick='login()') Login
+      button.toggle-btn(type='button' onclick='Register()') Register
+    form#login.input-group(action='/login' method='POST' autocomplete='on')
+      input.input-field(type='text' name='username' placeholder='username' required)
+      input.input-field(type='text' placeholder='Enter Password' name='password' required)
+      input.check-box(type='checkbox')
+      span
+        | Remember Password
+      button.login1(type='Submit') Log in
+    form#Register.input-group(action='/register' method='POST' autocomplete='on')
+      input.input-field(type='text' name='username' placeholder='username' required)
+      input.input-field(type='text' placeholder='Enter Password' name='password' required)
+      input.check-box(type='checkbox')
+      span
+        | NEXT
+      button.register(type='Submit') Register
+    .close +
+    //- form#Register.input-group(action ="/register" method="POST" autocomplete='on')
+    //-   input.input-field(type='text' name = "username" placeholder='User Id'  required=''  autofocus='')
+    //-   input.input-field(type='email' name="email"  placeholder='Email Id'  required='')
+    //-   input.input-field(type='text' name="password"  placeholder='Enter Password'  maxlength='6'  required='')
+    //-   input.check-box(type='checkbox')
+    //-   span
+    //-     | Next
+    //-   button.register(type='Submit') Register
+    .close +
+
+    //- form#Register.input-group( action ="/register" method="POST" autocomplete='on')
+    //-   input.input-field(type='text' placeholder='User Id' required autofocus='')
+    //-   input.input-field(type='email' placeholder='Email Id' required)
+    //-   input.input-field(type='text' placeholder='Enter Password' maxlength='6' required)
+    //-   input.check-box(type='checkbox')
+    //-   button.register(type='Submit') Register
+    //- .close +
+  
+nav#navbar2
+  ul
+    li.item
+      a(href='#') Vintage
+    li.item
+      a(href='#') Typography
+    li.item
+      a(href='#') Cartoon
+    li.item
+      a(href='#') Animal
+    li.item
+      a(href='#') Custom
+hr
+section#home
+  h1 WELCOME to TEESHOP
+  p
+    | In Collaboaration with 
+    a(href='https://teespring.com/') TEESPRING
+  .order
+    a(href='https://my-store-ce7f6b.creator-spring.com/')
+      button.order-set(type='button')
+        | BUY
+        | NOW!
+section.service-container.center
+  h1 FEATURED PRODUCTS
+  .service
+    .box
+      img(src='/static/vintage.png' height='160px')
+      h2.center.font Vintage T-shirt
+    .box
+      img(src='/static/character.png')
+      h2.center.font Character T-shirt
+    .box
+      img(src='/static/typography.png')
+      h2.center.font Typography T-shirt
+    .box
+      img(src='/static/animal.png')
+      h2.center.font Animal T-shirt
+footer#footer  
+    | Copyright © 2022 Teeshop.com 
+script 
+      include ../static/index.js        
