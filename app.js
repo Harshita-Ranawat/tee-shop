@@ -12,15 +12,16 @@ app.use(express.urlencoded({ extended: true }))
 app.use('/static', express.static('static'))
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/test')
+mongoose.connect('mongodb://127.0.0.1:27017/test',
+{     useNewUrlParser: true,
+      useUnifiedTopology: true})
     .then(() => {
         console.log("mongo connection open!!")
     })
-    .
-    catch(err => {
+    .catch(err => {
         console.log("connection error!!")
         console.log(err)
-    })
+    });
 mongoose.set('strictQuery', true);
 app.set('view engine', 'pug')
 app.set('views', path.join(__dirname, 'views'))
@@ -31,8 +32,6 @@ app.get('/', (req, res) => {
 })
 
 app.get('/home', (req, res) => {
-
-
     res.render('index.pug')
 })
 
