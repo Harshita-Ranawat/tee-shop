@@ -103,11 +103,12 @@ app.post('/login', async (req, res) => {
 app.post('/contact',async (req,res) =>
 {
     console.log("contact us");
-    const { txtPhone} = req.body;
-    console.log(txtPhone);
+    const { txtPhone,txtMsg} = req.body;
+    console.log(txtPhone,txtMsg);
    
     const contact = new Contact({
      txtPhone,
+     txtMsg,
     })
     await contact.save();
     res.redirect('/contact');

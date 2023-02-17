@@ -5,6 +5,10 @@ const contactschema = new mongoose.Schema({
     type: String,
    
   },
+  txtMsg:
+  {
+    type:String,
+  }
  
 
 
