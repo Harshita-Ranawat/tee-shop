@@ -7,7 +7,7 @@ const fs = require("fs");
 const app = express();
 const User = require('./models/user');
 const bcrypt = require('bcrypt');
-const port = 80;
+
 const mongoose = require('mongoose')
 app.use(express.urlencoded({ extended: true }))
 
@@ -93,6 +93,6 @@ app.post('/login', async (req, res) => {
 
 })
 
-app.listen(port, () => { console.log(`The application started successfully on port ${port}`) })
+
 
 
