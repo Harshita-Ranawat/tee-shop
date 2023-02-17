@@ -6,6 +6,7 @@ const path = require("path");
 const fs = require("fs");
 const app = express();
 const User = require('./models/user');
+const Contact = require('./models/contact');
 const bcrypt = require('bcrypt');
 
 const mongoose = require('mongoose')
@@ -36,7 +37,7 @@ const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error"));
 db.once("open", () => {
   console.log("connection open");
-  const port = process.env.PORT || 8080;
+  const port = process.env.PORT || 3001;
   app.listen(port, () => {
     console.log(`list on port ${port}`);
   });
@@ -58,6 +59,12 @@ app.get('/about', (req, res) => {
 
     const params = {}
     res.status(200).render('about.pug', params)
+})
+
+app.get('/contact', (req, res) => {
+
+    const params = {}
+    res.status(200).render('contact.pug', params)
 })
 
 app.post('/register', async (req, res) => {
@@ -91,6 +98,19 @@ app.post('/login', async (req, res) => {
         res.redirect("/home");
     }
 
+})
+
+app.post('/contact',async (req,res) =>
+{
+    console.log("contact us");
+    const { txtPhone} = req.body;
+    console.log(txtPhone);
+   
+    const contact = new Contact({
+     txtPhone,
+    })
+    await contact.save();
+    res.redirect('/contact');
 })
 
 
